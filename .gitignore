@@ -8,11 +8,6 @@
 /vendor/
 ###< symfony/framework-bundle ###
 
-###> miscellaneous ###
+###> other ###
 /.idea
-###< miscellaneous ###
-
-###> friendsofphp/php-cs-fixer ###
-/.php-cs-fixer.php
-/.php-cs-fixer.cache
-###< friendsofphp/php-cs-fixer ###
+###< other ###

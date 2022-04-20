@@ -1,19 +1,15 @@
-# symfony-template
-Implements xxx in symfony
-
-| Branch     | xxx Version | Symfony Version | PHP Version     |
-|------------|-------------|-----------------|-----------------|
-| [4.4.x][2] | `x.x`       | `4.4.x`         | `7.4` or higher |
+# stripe
+Symfony with Stripe: Online payment processing for internet businesses
 
 
-Read [xxx Docs](xxx)
+| Repository              | Symfony Version | PHP Version     |
+|-------------------------|-----------------|-----------------|
+| [payum-payum-bundle][1] | `4.4.x	`        | `7.4` or higher |
 
-### Resources  
-- [xxx](xxx)
 
+Read [Stripe Docs](https://stripe.com/docs)
 
-### License
-The code is licensed under the [MIT License](https://github.com/habibun/symfony-template/blob/master/LICENSE)
+[1]: https://github.com/habibun/payum-payum-bundle
 
-[1]: https://github.com/habibun/symfony-template/tree/5.4.x
-[2]: https://github.com/habibun/symfony-template/tree/4.4.x
+## License
+The code is licensed under the [MIT License](https://github.com/habibun/stripe/blob/master/LICENSE)
