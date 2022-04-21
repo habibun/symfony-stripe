@@ -9,6 +9,11 @@ Symfony with Stripe: Online payment processing for internet businesses
 
 
 Read [Stripe Docs](https://stripe.com/docs)
+Resources:
+- [`gary-clarke`](2)
+    - [Accepting Payments in Symfony Using STRIPE](https://www.youtube.com/watch?v=xh8wFxiANMI)
+    - [Stripe - Accept a payment](https://stripe.com/docs/payments/accept-a-payment)
+    - [symfony-stripe](https://github.com/GaryClarke/symfony-stripe)
 
 [1]: https://github.com/habibun/payum-payum-bundle
 [2]: https://github.com/habibun/stripe/tree/gary-clarke
