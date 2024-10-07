@@ -19,4 +19,4 @@ Resources:
 [2]: https://github.com/habibun/stripe/tree/gary-clarke
 
 ## License
-The code is licensed under the [MIT License](https://github.com/habibun/stripe/blob/master/LICENSE)
+The code is licensed under the [MIT License](https://github.com/habibun/symfony-stripe/blob/master/LICENSE)
