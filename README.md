@@ -16,7 +16,7 @@ Resources:
     - [symfony-stripe](https://github.com/GaryClarke/symfony-stripe)
 
 [1]: https://github.com/habibun/payum-payum-bundle
-[2]: https://github.com/habibun/stripe/tree/gary-clarke
+[2]: https://github.com/habibun/symfony-stripe/tree/gary-clarke
 
 ## License
 The code is licensed under the [MIT License](https://github.com/habibun/symfony-stripe/blob/master/LICENSE)
