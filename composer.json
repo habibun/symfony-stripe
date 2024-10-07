@@ -4,17 +4,21 @@
     "minimum-stability": "stable",
     "prefer-stable": true,
     "require": {
-        "php": ">=8.1",
+        "php": ">=8.2",
         "ext-ctype": "*",
         "ext-iconv": "*",
+        "stripe/stripe-php": "^16.1",
         "symfony/console": "6.4.*",
         "symfony/dotenv": "6.4.*",
         "symfony/flex": "^2",
         "symfony/framework-bundle": "6.4.*",
         "symfony/runtime": "6.4.*",
+        "symfony/twig-bundle": "6.4.*",
         "symfony/yaml": "6.4.*"
     },
     "require-dev": {
+        "symfony/debug-bundle": "6.4.*",
+        "symfony/maker-bundle": "^1.61"
     },
     "config": {
         "allow-plugins": {
