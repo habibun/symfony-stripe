@@ -7,24 +7,23 @@ use Stripe\Exception\ApiErrorException;
 use Stripe\Stripe;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\RedirectResponse;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 
 class StripeHostedPageController extends AbstractController
 {
-    #[Route('/stripe-hosted-page', name: 'app_stripe_hosted_page')]
-    public function index(): Response
-    {
-        return $this->render('stripe_hosted_page/index.html.twig');
-    }
-
     /**
      * @throws ApiErrorException
      */
     #[Route('/stripe-hosted-page/checkout', name: 'app_stripe_hosted_page_checkout')]
-    public function checkout(): Response
+    public function checkout(Request $request): Response
     {
+        if (!$request->isMethod('POST')) {
+            return $this->render('stripe_hosted_page/checkout.html.twig');
+        }
+
         $stripeSecretKey = $this->getParameter('stripe')['secret_key'];
         Stripe::setApiKey($stripeSecretKey);
         header('Content-Type: application/json');
@@ -32,6 +31,13 @@ class StripeHostedPageController extends AbstractController
         $checkout_session = Session::create([
             'line_items' => [[
                 'price' => 'price_1Q7RTtKrr8S24r6DAEtZGzXc',
+//                'price_data' => [
+//                    'currency'     => 'usd',
+//                    'product_data' => [
+//                        'name' => 'T-shirt',
+//                    ],
+//                    'unit_amount'  => 2000,
+//                ],
                 'quantity' => 1,
             ]],
             'mode' => 'payment',
