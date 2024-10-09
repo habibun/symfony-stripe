@@ -8,6 +8,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
+use Symfony\Component\Routing\Generator\UrlGenerator;
+use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 
 class EmbeddedFormController extends AbstractController
 {
@@ -17,6 +19,8 @@ class EmbeddedFormController extends AbstractController
     #[Route('/embedded-form/checkout', name: 'app_embedded_form_checkout')]
     public function checkout(Request $request): Response
     {
+
+//        dd($this->generateUrl('app_embedded_form_return', ['session_id' => "{CHECKOUT_SESSION_ID}"], UrlGeneratorInterface::ABSOLUTE_URL));
         if (!$request->isMethod('POST')) {
             return $this->render('embedded_form/checkout.html.twig');
         }
@@ -25,20 +29,19 @@ class EmbeddedFormController extends AbstractController
         $stripe = new StripeClient($stripeSecretKey);
         header('Content-Type: application/json');
 
-        $YOUR_DOMAIN = 'http://localhost:4242';
-
         $checkout_session = $stripe->checkout->sessions->create([
             'ui_mode' => 'embedded',
             'line_items' => [[
-                # Provide the exact Price ID (e.g. pr_1234) of the product you want to sell
-                'price' => '{{PRICE_ID}}',
+                'price' => 'price_1Q7RTtKrr8S24r6DAEtZGzXc',
                 'quantity' => 1,
             ]],
             'mode' => 'payment',
-            'return_url' => $YOUR_DOMAIN . '/return.html?session_id={CHECKOUT_SESSION_ID}',
+            'return_url' => $this->generateUrl('app_embedded_form_return', ['session_id' => "{CHECKOUT_SESSION_ID}"], UrlGeneratorInterface::ABSOLUTE_URL),
         ]);
 
-        echo json_encode(array('clientSecret' => $checkout_session->client_secret));
+//        echo json_encode(array('clientSecret' => $checkout_session->client_secret));
+
+        return $this->json(['clientSecret' => $checkout_session->client_secret]);
     }
 
     #[Route('/embedded-form/status', name: 'app_embedded_form_status')]

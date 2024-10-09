@@ -6,4 +6,15 @@
     <h2>Embedded form</h2>
 
 
+    <!-- Display a payment form -->
+    <div id="checkout">
+        <!-- Checkout will insert the payment form here -->
+    </div>
 {% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="{{ asset('checkout.js') }}" defer></script>
+{% endblock %}
+

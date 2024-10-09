@@ -7,3 +7,8 @@
 
 
 {% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('return.js') }}" defer></script>
+{% endblock %}
