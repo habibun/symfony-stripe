@@ -49,7 +49,7 @@ class CustomStripePaymentController extends AbstractController
             echo json_encode(['error' => $e->getMessage()]);
         }
 
-        return $this->json($output);
+        exit();
     }
 
     #[Route('/custom-stripe-payment/complete', name: 'custom_stripe_payment_complete')]

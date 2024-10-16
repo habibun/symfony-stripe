@@ -14,7 +14,7 @@ document
 
 // Fetches a payment intent and captures the client secret
 async function initialize() {
-    const { clientSecret, dpmCheckerLink } = await fetch("/create.php", {
+    const { clientSecret, dpmCheckerLink } = await fetch("https://127.0.0.1:8000/custom-stripe-payment/create", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ items }),
@@ -41,7 +41,7 @@ async function handleSubmit(e) {
         elements,
         confirmParams: {
             // Make sure to change this to your payment completion page
-            return_url: "http://localhost:4242/complete.html",
+            return_url: "https://127.0.0.1:8000/custom-stripe-payment/complete",
         },
     });
 
